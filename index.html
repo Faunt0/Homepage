@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+	<title>Personal Homepage</title>
+	<meta property="og:type" content="webapp">
+	<meta property="og:title" content="Personal Homepage">
+	<meta property="og:description" content="A homepage that stores my personal bookmarks, eliminating the need to remember every website I regularly visit.">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://unpkg.com/vue@next"></script>
+	<!-- JS LaTeX equations -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<button style="display: none;" id="lightdark" @click="lighttoggle">{{ name }}</button>
+	<h1 id="clock" v-bind:title="fulltime">
+		{{ showtime() }}
+	</h1>
+
+	<div id="searchfield">
+		<input type="text" id="searchbar" placeholder="duckduckgo" v-on:keyup.enter="search">
+	</div>
+
+	<div id="todolist">
+		<div class="todoinput" v-bind:style="borderBottom">
+			<div v-if="newtodo != ''" style="color: gold;">{{ newtodo }}</div>
+			<div v-else style="color: gold;"><i>add new todo</i></div>
+			<input id="newtodo" name="addtodo" v-model="newtodo" v-on:keyup.enter="addTodo" type="text">
+			<button v-on:click="addTodo">Add todo</button>
+			<button v-on:click="removeAll">RemoveAll</button>
+			<button v-on:click="removeStriked">Striked</button>
+		</div>
+
+		<todo-item 
+				v-for="item in todos" 
+				v-bind:item="item" 
+				v-bind:key="item.id" 
+				v-on:remove-todo="removeTodo(item.id)"
+				v-on:strike-toggle="strikeToggle(item.id)"/>
+	</div>
+
+	<div id="bookmarks">
+		<div class="listgroup">
+			<group-links 
+						v-for="bookmark in bookmarks"
+						v-bind:bookmark="bookmark"
+						v-bind:key="bookmark.id"
+						v-on:remove-bookmark="removeBookmark(bookmark.id)"
+						v-on:fade-in="fadeIn(bookmark.id)"
+						v-on:fade-out="fadeOut(bookmark.id)"
+						@edit="editBookmark(bookmark.id)"/>
+		</div>
+		<div class="grouplinks" id="random" @click="random">
+			<a href="" rel="noreferrer noopener">Random</a>
+		</div>
+
+	<!-- <div id="searchfield">
+		<input type="text" id="searchbar" placeholder="duckduckgo" v-on:keyup.enter="search">
+	</div> -->
+	</div>
+	
+	<div id="maths">
+		<button v-on:click="changeEquations"><h1>Math</h1></button>
+		<div class="formulasSection">
+			<a class="formulasDescription" href="">{{ activeDescription }}</a>
+			<div class="formulas">
+				{{ activeFormulas }}
+			</div>
+		</div>
+	</div>
+	
+	<div id="edit">
+		<div id="bookmarkedits">
+			<input type="text">
+			<input type="text">
+			<div>output</div>
+		</div>
+		<div id="mathedits">
+			<input type="text">
+			<textarea name="" id="" cols="30" rows="10">hello</textarea>
+			<div>output</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

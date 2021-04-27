@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <input type="password" name="" id="password" ">
+    <button onclick="checkpassword()">Login</button>
+    <div id="error"></div>
+    <script>
+function checkpassword () {
+    var input = document.getElementById('password').value
+    console.log('eh there hoser')
+
+    text = `
+<h1 style="color: red;">THATS NOT THE PASSWORD, LEAVE</h1>
+    `
+
+    if (input == 'birdsarefake') {
+        // route to personal page
+        console.log('succes')
+    } else {
+        document.getElementById('error').innerHTML = text
+        alert('you are delusional if you think this correct..')
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+html {
+	margin: auto;
+	/* text-align: center; */
+	font-family: 'Trebuchet MS', Arial, sans-serif;
+	/* background-color: rgb(54, 41, 41); */
+}
+#clock {
+	text-align: center;
+	width: 10em;
+	margin: auto;
+}
+
+.toplist {
+	text-align: center;
+	/* width: 75%; */
+	margin: auto;
+}
+.toplist li ul li {
+	text-align: left;
+	/* text-decoration: blue; */
+}
+.outerli {
+	display: inline-block;
+	width: 10em;
+	border: 1px solid red;
+}
+.outerli ul li {
+	text-align: left;
+}
+
+
+/* border: 1px red solid; */
+
+
+.todos {
+	width: 30em;
+	margin: 2em auto;
+}
+.todoinput {
+	padding: 1em;
+	border-bottom: 1px solid black;
+}
+.todoinput input {
+	padding: 0.7em;
+}
+.todoinput button {
+	border: 1px blue solid;
+}
+.todoinput div {
+	padding: 0.5em;
+}
+
+
+#todolist {
+	width: 70%;
+	max-width: 20em;
+	margin: auto;
+}
+.todoitem {
+	/* display: flexbox; */
+	/* flex: 1; */
+	/* border: 1px red solid; */
+	display: block;
+	/* width: 100%; */
+	/* width: inherit; */
+	float: left;
+	margin: 0.5em;
+	/* padding: 0.7em; */
+	user-select: none;
+}
+.todoitem {
+	/* padding: 10px; */
+	/* margin: auto; */
+	background-color: white; 
+	border: none;
+	/* padding: 0.7em; */
+	/* border: 1px red solid; */
+}
+.todoitem div {
+	/* margin: 0.5em; */
+	text-align: left;
+	padding: 0.5em 1.5em;
+	border-left: 2px solid goldenrod;
+
+	/* border: 1px red solid; */
+}
+.todoitem div button {
+	margin: auto;
+}
+
+/* .todoitem div button {
+	margin: 0.2em auto;
+} */
+
+/* .listitem { */
+	/* display: list-item; */
+	/* list-style: none; */
+/* } */
+
+
+#output {
+	font-family: Arial, Helvetica, sans-serif;
+	border: 1px solid black;
+}
+
+/* .inputflextest {
+	margin: auto;
+	min-width: 50px;
+}
+.inputflextest input {
+	min-width: 20px;
+} */

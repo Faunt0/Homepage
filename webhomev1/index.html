@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<title>PH</title>
+</head>
+<body>
+	<div id="clock" v-bind:title="fulltime">
+		{{ showtime() }}
+	</div>
+	<h1 id="earthage"></h1>
+
+	<ul class="toplist">
+		<li class="outerli">
+			<!-- <h3>School</h3> -->
+			<div>School</div>
+			<ul>
+				<li><a href="https://hermannwesselink.magister.net/magister/#/agenda">Magister</a></li>
+				<li><a href=""><s>hello</s></a></li>
+				<li><a href="https://teams.microsoft.com/">MS Teams</a></li>
+				<li>Orthodox</li>
+				<li>but ill try it</li>
+			</ul>
+		</li>
+		<li class="outerli">
+			<div>Alphabet</div>
+			<ul>
+				<li>Echo</li>
+				<li>Alpha</li>
+				<li>Gamma</li>
+				<li>Foxtrot</li>
+			</ul>
+		</li>
+		<li class="outerli">
+			<div>Fruits</div>
+			<ul>
+				<li>Bananas</li>
+				<li>Apples</li>
+				<li>Grenadines</li>
+				<li>Strawberry</li>
+			</ul>
+		</li>
+		<li class="outerli">
+			<div>Deep Learning</div>
+			<ul>
+				<li><a href="https://theaisummer.com/learn-deep-learning/">The Ai summer</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<div>
+		<div></div>
+	</div>
+	
+	<div id="todolist" class="todos">
+		<div class="todoinput">
+			<div v-if="newtodo != ''">{{ newtodo }}</div>
+			<div v-else><i>add new todo</i></div>
+			<input id="newtodo" v-model="newtodo" @keyup.enter="addtodo" type="text">
+			<button @click="addtodo">Add todo</button>
+			<!-- <button @click="remove">Remove</button> -->
+		</div>
+
+		<div @click="remove">delete / remove</div>
+
+		<list-item v-for="item in todos" v-bind:item="item" v-bind:key="item.id" />
+	</div>
+
+
+
+	<div style="display: none;">
+	<div class="inputflextest">
+		<div>
+			This should flex
+		</div>
+		<input type="text" placeholder="type long">
+	</div>
+
+	<!-- <div id="todoapp">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text}}
+			</li>
+		</ol>
+	</div> -->
+
+	<div id="revmesapp">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse!</button>
+	</div>
+
+	<div id="app6">
+		<a href="">{{ linkname }}</a>
+		<input type="text" v-model="linkname">
+	</div>
+	</div>
+
+
+	<script src="script.js"></script>
+</body>
+</html>

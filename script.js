@@ -13,6 +13,26 @@ function clock () {
 }
 setInterval(clock, 500);
 
+// const clock = Vue.createApp({
+// 	data() {
+// 		return {
+// 			time: Date().split(' ')[4],
+// 		}
+// 	},
+// 	// created:
+// 	computed: {
+// 		time() {
+// 			return Date().split(' ')[4];
+// 		}
+// 	},
+// 	methods: {
+// 		clock() {
+// 			this.time = Date().split(' ')[4];
+// 			setInterval(clock, 500);
+// 		}
+// 	}
+// }).mount('#clock')
+
 window.addEventListener("keydown", function(event) {
 	if (event.key.match(/[0-9]/) && document.getElementById('newtodo').value == '') {
 		window.open(bookmarkList.bookmarks[event.key].link, '_blank')

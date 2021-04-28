@@ -39,6 +39,10 @@ button:active {
 	border: 2px dotted black;
 	text-emphasis: bold;
 } */
+img {
+	margin: 10px auto;
+	width: 20em;
+}
 
 #searchfield {
 	grid-column: 3 / 3;

@@ -294,7 +294,7 @@ const mathformula = Vue.createApp({
 
 	data() {
 		return {
-			activeGroup: 0,
+			activeGroup: 10,
 			activeFormulas: ``,
 			activeDescription: '',
 			formulaItems: [
@@ -366,15 +366,34 @@ const mathformula = Vue.createApp({
 						$$ \\int_{a}^bc \\cdot f(x)dx=c\\cdot\\int_{a}^bf(x)dx $$
 					`
 				},
-				{ id: 0, description: 'Limits', formulas: `
-						$$  $$
-					`
-				},
 				{ id: 0, description: 'Complex Numbers', formulas: `
 						$$\\phi=\\arg(x+yi)$$
 						$$ z=r(cos(\\phi)+isin(\\phi)) $$
 						$$ z=re^{i\\phi} $$
 						$$ e^1\\approx2.71 $$
+					`
+				},
+				{ id: 0, description: 'Limits', formulas: `
+						$$ \\lim_{x\\uparrow a} (\\frac{3x^4+4x^3+16}{x^4+3x^3}) $$
+						$$ f(x)=ax+b $$
+						$$ \\lim_{x\\to \\pm \\infty}(f'(x)) \\Rightarrow a $$
+						$$ \\lim_{x\\to \\pm \\infty}(f(x)-ax) \\Rightarrow b $$
+					`
+				},
+				{ id: 0, description: 'Set Theory', formulas: `
+						$$ \\langle \\sum, S, s, A, T \\rangle $$
+						$$ \\langle \\{0, 1\\}, \\{A, B\\}, A, \\{B\\}, 
+						\\begin{array}{c|c|c|} 
+							T & 0 & 1 \\\\
+						\\hline
+							A & A & B\\\\
+							B & A & B\\\\
+						\\end{array}
+						\\rangle $$
+					`
+				},
+				{ id: 0, description: 'Eindige automaten', formulas: `
+						de eindige automaat van de vorige groep.
 					`
 				},
 			]

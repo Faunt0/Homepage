@@ -65,9 +65,13 @@
 	<div id="maths">
 		<button v-on:click="changeEquations"><h1>Math</h1></button>
 		<div class="formulasSection">
-			<a class="formulasDescription" href="">{{ activeDescription }}</a>
+			<a class="formulasDescription" href="science.html">{{ activeDescription }}</a>
 			<div class="formulas">
 				{{ activeFormulas }}
+			</div>
+			<div v-if="activeGroup == 10">
+
+				<img src="eindigeAutomaten.svg" alt="eindigeAutomaten">
 			</div>
 		</div>
 	</div>

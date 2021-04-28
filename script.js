@@ -8,33 +8,35 @@
 
 console.log('EHllo general kenobi');
 
-function clock () {
-	document.getElementById('clock').innerHTML = Date().split(' ')[4];
-}
-setInterval(clock, 500);
+// function clock () {
+// 	document.getElementById('clock').innerHTML = Date().split(' ')[4];
+// }
+// setInterval(clock, 500);
 
-// const clock = Vue.createApp({
-// 	data() {
-// 		return {
-// 			time: Date().split(' ')[4],
-// 		}
-// 	},
-// 	// created:
-// 	computed: {
-// 		time() {
-// 			return Date().split(' ')[4];
-// 		}
-// 	},
-// 	methods: {
-// 		clock() {
-// 			this.time = Date().split(' ')[4];
-// 			setInterval(clock, 500);
-// 		}
-// 	}
-// }).mount('#clock')
+const clock = Vue.createApp({
+	data() {
+		return {
+			time: Date().split(' ')[4],
+		}
+	},
+	created() {
+		this.clock()
+	},
+	methods: {
+		clock() {
+			// clearTimeout(this.clock)
+			this.time = Date().split(' ')[4];
+			setTimeout(this.clock, 1000)
+			// setInterval(this.clock, 1000)
+		},
+		// changeTheme() {
+		// 	console.log('helleejfelfjk')
+		// }
+	}
+}).mount('#clock')
 
 window.addEventListener("keydown", function(event) {
-	if (event.key.match(/[0-9]/) && document.getElementById('newtodo').value == '') {
+	if (event.key.match(/[0-9]/) && document.getElementById('newtodo').value == '' && document.getElementById('searchfield').value == '') {
 		window.open(bookmarkList.bookmarks[event.key].link, '_blank')
 	}
 }, true);
@@ -73,6 +75,17 @@ const searchBar = Vue.createApp({
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-2].setAttribute('target', '_incognito')
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-1].setAttribute('target', '_incognito')
 					setTimeout(function(){ bookmarkList.bookmarks.splice(bookmarkList.bookmarks.length-2, 2)}, 3000);
+					break;
+				case (str.match(/\/theme (\d)/) || {}).input:
+					i = str.match(/\/theme (\d)/)[1];
+					if (i == 0) {
+						console.log('Main Theme')
+					} else if (i == 1) {
+						console.log('Theme 2')
+					} else if (i == 2) {
+						console.log('Theme 3')
+					}
+					document.getElementById('searchbar').value = ''
 					break;
 				case (str.match(/\/\w+/) || {}).input:
 					console.log('Sorry, this command don\'t work')

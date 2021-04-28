@@ -79,7 +79,7 @@ img {
 	/* transform:rotate(30deg); */
 	animation: rotate 1s;
 	animation-iteration-count: infinite;
-	/* animation-timing-function: linear; */
+	animation-timing-function: linear;
 	background-repeat: repeat;
 	background-size: 3em;
 

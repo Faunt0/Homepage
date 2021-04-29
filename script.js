@@ -24,19 +24,15 @@ const clock = Vue.createApp({
 	},
 	methods: {
 		clock() {
-			// clearTimeout(this.clock)
 			this.time = Date().split(' ')[4];
 			setTimeout(this.clock, 1000)
-			// setInterval(this.clock, 1000)
 		},
-		// changeTheme() {
-		// 	console.log('helleejfelfjk')
-		// }
 	}
 }).mount('#clock')
 
 window.addEventListener("keydown", function(event) {
-	if (event.key.match(/[0-9]/) && document.getElementById('newtodo').value == '' && document.getElementById('searchfield').value == '') {
+	if (event.key.match(/[0-9]/) && document.getElementById('newtodo').value == '' && searchBar.query == '') {
+		console.log(searchBar.query)
 		window.open(bookmarkList.bookmarks[event.key].link, '_blank')
 	}
 }, true);
@@ -50,13 +46,14 @@ const searchBar = Vue.createApp({
 	methods: {
 		search() {
 			var str = document.getElementById('searchbar').value;
+			// this.query = str
 			switch (str) {
 				case '/edit':
 					console.log('this should make the page editable')
-					document.getElementById('searchbar').value = ''
+					searchBar.query = ''
 					document.getElementsByTagName('html')[0].style.backgroundImage = `none;`
 					document.getElementsByTagName('html')[0].style.backgroundImage = `linear-gradient(180deg, antiquewhite, #e48257);`
-					document.getElementsByTagName('html')[0].style.backgroundColor = `#e48257`
+					// document.getElementsByTagName('html')[0].style.backgroundColor = `#e48257`
 					// for (let i = 0; i < 360; i++) {
 					// 	setTimeout(function() {document.getElementsByTagName('html')[0].style.backgroundImage = `linear-gradient(${i}deg, #2d132c, #e48257);`}, 1000)
 					// 	clearTimeout()
@@ -65,7 +62,7 @@ const searchBar = Vue.createApp({
 					break;
 				case '/porn':
 					console.log('this should show the porn pages for a brief moment')
-					document.getElementById('searchbar').value = ''
+					searchBar.query = ''
 					bookmarkList.bookmarks.push(
 						{id: bookmarkList.bookmarks.length, name: 'Pornhub', link: 'https://www.pornhub.com/'},
 						{id: bookmarkList.bookmarks.length+1, name: 'Chaturbate', link: 'https://chaturbate.com/'}
@@ -74,26 +71,36 @@ const searchBar = Vue.createApp({
 					// document.getElementsByClassName('grouplinks')[bookmarkList.bookmarks.length-1].getElementsByTagName('a').setAttribute('target', '_incognito')
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-2].setAttribute('target', '_incognito')
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-1].setAttribute('target', '_incognito')
-					setTimeout(function(){ bookmarkList.bookmarks.splice(bookmarkList.bookmarks.length-2, 2)}, 3000);
+					setTimeout(function(){ bookmarkList.bookmarks.splice(bookmarkList.bookmarks.length-2, 2) }, 3000);
 					break;
 				case (str.match(/\/theme (\d)/) || {}).input:
 					i = str.match(/\/theme (\d)/)[1];
 					if (i == 0) {
 						console.log('Main Theme')
+						document.getElementById('clock').style.backgroundColor = "antiquewhite"
+						document.getElementById('bookmarks').style.backgroundColor = "antiquewhite"
+						document.getElementById('todolist').style.backgroundColor = "antiquewhite"
+						for (let i = 0; i < document.getElementsByClassName('grouplinks').length; i++) {
+							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = "antiquewhite";
+						}
+						
+						for (let i = 0; i < document.querySelectorAll('.todoinput button').length; i++) {
+							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = "";
+						}
 					} else if (i == 1) {
 						console.log('Theme 2')
 					} else if (i == 2) {
 						console.log('Theme 3')
 					}
-					document.getElementById('searchbar').value = ''
+					searchBar.query = ''
 					break;
 				case (str.match(/\/\w+/) || {}).input:
 					console.log('Sorry, this command don\'t work')
-					document.getElementById('searchbar').value = ''
+					searchBar.query = ''
 					break;
 				default:
 					window.open('https://duckduckgo.com/?q=' + encodeURI(document.getElementById('searchbar').value), '_blank')
-					document.getElementById('searchbar').value = ''
+					searchBar.query = ''
 					break;
 			}
 		}
@@ -228,6 +235,7 @@ const bookmarkList = Vue.createApp({
 				'https://github.com/terkelg/awesome-creative-coding#math',
 				'https://latex.wikia.org/wiki/List_of_LaTeX_symbols',
 				'https://regex101.com/',
+				'https://www.overleaf.com/learn/latex/Mathematical_expressions',
 			]
 		}
 	},

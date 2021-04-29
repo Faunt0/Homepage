@@ -126,24 +126,24 @@ img {
 #random a:hover {
 	background-color:lightsalmon;
 }
-.toplist {
+/* .toplist {
 	text-align: center;
-	/* width: 90%; */
+	width: 90%;
 	padding: 0;
 	margin: auto;
 }
 .toplist li ul li {
 	text-align: left;
-	/* text-decoration: blue; */
+	text-decoration: blue;
 }
 .outerli {
 	display: inline-block;
 	width: 10em;
-	/* border: 1px solid red; */
+	border: 1px solid red;
 }
 .outerli ul li {
 	text-align: left;
-}
+} */
 .listgroup {
 	display: grid;
 	grid-template-columns: 50% 50%;

@@ -22,12 +22,9 @@
 	<h1 id="clock" @click="changeTheme">
 		{{ time }}
 	</h1>
-	<!-- <button id="clock" @click="changeTheme">
-		{{ time }}
-	</button> -->
 
 	<div id="searchfield">
-		<input type="text" id="searchbar" placeholder="duckduckgo" v-on:keyup.enter="search">
+		<input type="text" id="searchbar" placeholder="duckduckgo" v-on:keyup.enter="search" v-model="query">
 	</div>
 
 	<div id="todolist">

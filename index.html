@@ -38,35 +38,33 @@
 		</div>
 
 		<todo-item 
-				v-for="item in todos" 
-				v-bind:item="item" 
-				v-bind:key="item.id" 
-				v-on:remove-todo="removeTodo(item.id)"
-				v-on:strike-toggle="strikeToggle(item.id)"/>
+			v-for="item in todos" 
+			v-bind:item="item" 
+			v-bind:key="item.id" 
+			v-on:remove-todo="removeTodo(item.id)"
+			v-on:strike-toggle="strikeToggle(item.id)"/>
 	</div>
 
 	<div id="bookmarks">
 		<div class="listgroup">
 			<group-links 
-						v-for="bookmark in bookmarks"
-						v-bind:bookmark="bookmark"
-						v-bind:key="bookmark.id"
-						v-on:remove-bookmark="removeBookmark(bookmark.id)"
-						v-on:fade-in="fadeIn(bookmark.id)"
-						v-on:fade-out="fadeOut(bookmark.id)"
-						@edit="editBookmark(bookmark.id)"/>
+				v-for="bookmark in bookmarks"
+				v-bind:bookmark="bookmark"
+				v-bind:key="bookmark.id"
+				v-on:remove-bookmark="removeBookmark(bookmark.id)"
+				v-on:fade-in="fadeIn(bookmark.id)"
+				v-on:fade-out="fadeOut(bookmark.id)"
+				@edit="editBookmark(bookmark.id)"/>
 		</div>
 		<div class="grouplinks" id="random" @click="random">
 			<a href="" rel="noreferrer noopener">Random</a>
 		</div>
-
-	<!-- <div id="searchfield">
-		<input type="text" id="searchbar" placeholder="duckduckgo" v-on:keyup.enter="search">
-	</div> -->
 	</div>
 	
 	<div id="maths">
-		<button v-on:click="changeEquations"><h1>Math</h1></button>
+		<button v-on:click="changeEquations">
+			<h1>Math</h1>
+		</button>
 		<div class="formulasSection">
 			<a class="formulasDescription" href="science.html">{{ activeDescription }}</a>
 			<div class="formulas">

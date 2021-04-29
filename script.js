@@ -3,6 +3,8 @@
 // https://colorhunt.co/palette/265073
 // https://colorhunt.co/palette/152965
 // https://colorhunt.co/palette/147532
+// https://colorhunt.co/palette/264715
+// https://colorhunt.co/palette/220190
 // https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#color_keywords
 
 
@@ -40,7 +42,7 @@ window.addEventListener("keydown", function(event) {
 const searchBar = Vue.createApp({
 	data() {
 		return {
-			query: ''
+			query: '/theme 1'
 		}
 	},
 	methods: {
@@ -77,20 +79,118 @@ const searchBar = Vue.createApp({
 					i = str.match(/\/theme (\d)/)[1];
 					if (i == 0) {
 						console.log('Main Theme')
+					} else if (i == 1) {
 						document.getElementById('clock').style.backgroundColor = "antiquewhite"
+						document.getElementById('clock').style.color = "black"
+						document.querySelector('#maths').style.backgroundColor = "antiquewhite"
+						document.querySelector('#maths').style.backgroundColor = "transparant"
+						document.querySelector('#maths button').style.backgroundColor = "antiquewhite"
+						document.querySelector('#maths button').style.border = "2px solid antiquewhite"
+						document.querySelector('#maths button h1').style.color = "black"
+						document.querySelector('#maths button h1').style.borderBottom = "2px solid black"
+						document.querySelector('#maths .formulasSection').style.backgroundColor = "orchid"
+
 						document.getElementById('bookmarks').style.backgroundColor = "antiquewhite"
 						document.getElementById('todolist').style.backgroundColor = "antiquewhite"
 						for (let i = 0; i < document.getElementsByClassName('grouplinks').length; i++) {
-							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = "antiquewhite";
+							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = "orchid";
 						}
 						
 						for (let i = 0; i < document.querySelectorAll('.todoinput button').length; i++) {
-							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = "";
+							document.querySelectorAll('.todoinput button')[i].style.color = "black";
+							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = "orchid";
 						}
-					} else if (i == 1) {
+						for (let i = 0; i < document.querySelectorAll('.todoinput div').length; i++) {
+							document.querySelectorAll('.todoinput div')[i].style.color = "black";
+							// document.querySelectorAll('.todoinput div')[i].style.backgroundColor = "orchid";
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoitem button').length; i++) {
+							document.querySelectorAll('.todoitem button')[i].style.color = "black";
+							document.querySelectorAll('.todoitem button')[i].style.backgroundColor = "orchid";
+						}
+						for (let i = 0; i < document.querySelectorAll('input').length; i++) {
+							document.querySelectorAll('input')[i].style.backgroundColor = 'floralwhite'
+							document.querySelectorAll('input')[i].style.color = 'black'
+						}
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'none'
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'linear-gradient(0deg, antiquewhite, orchid, darkorchid)'
 						console.log('Theme 2')
 					} else if (i == 2) {
+						var c1 = '#1b1717';
+						document.getElementById('clock').style.backgroundColor = "#630000"
+						document.getElementById('clock').style.color = "#eeebdd"
+						document.querySelector('#maths').style.backgroundColor = "#630000"
+						document.querySelector('#maths').style.backgroundColor = "#630000"
+						document.querySelector('#maths button').style.backgroundColor = "antiquewhite"
+						document.querySelector('#maths button').style.border = "2px solid #eeebdd"
+						document.querySelector('#maths button h1').style.color = "#eeebdd"
+						document.querySelector('#maths button h1').style.borderBottom = "2px solid #eeebdd"
+						document.querySelector('#maths .formulasSection').style.backgroundColor = "#810000"
+						document.getElementById('bookmarks').style.backgroundColor = "#630000"
+						document.getElementById('todolist').style.backgroundColor = "#630000"
+						for (let i = 0; i < document.getElementsByClassName('grouplinks').length; i++) {
+							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = "#810000";
+						}
+						
+						for (let i = 0; i < document.querySelectorAll('.todoinput button').length; i++) {
+							document.querySelectorAll('.todoinput button')[i].style.color = "#eeebdd";
+							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = "#810000";
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoinput div').length; i++) {
+							document.querySelectorAll('.todoinput div')[i].style.color = "#eeebdd";
+							// document.querySelectorAll('.todoinput div')[i].style.backgroundColor = "#810000";
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoitem button').length; i++) {
+							document.querySelectorAll('.todoitem button')[i].style.color = "#eeebdd";
+							document.querySelectorAll('.todoitem button')[i].style.backgroundColor = "#810000";
+						}
+						for (let i = 0; i < document.querySelectorAll('input').length; i++) {
+							document.querySelectorAll('input')[i].style.backgroundColor = '#1b1717'
+							document.querySelectorAll('input')[i].style.color = '#eeebdd'
+						}
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'none'
+						document.getElementsByTagName('html')[0].style.backgroundColor = '#1b1717'
+						// document.getElementsByTagName('html')[0].style.backgroundImage = 'linear-gradient(0deg, antiquewhite, orchid, darkorchid)'
 						console.log('Theme 3')
+					} else if (i == 3) {
+						var c1 = '#af6b58'; // background
+						var c2 = '#cbbcb1'; // accent color
+						var c3 = '#556052'; // element color
+						var c4 = '#f2efea'; // very bright
+						document.getElementById('clock').style.backgroundColor = c3
+						document.getElementById('clock').style.color = c2
+						document.querySelector('#maths').style.backgroundColor = c3
+						document.querySelector('#maths').style.backgroundColor = c3
+						document.querySelector('#maths button').style.backgroundColor = c3
+						document.querySelector('#maths button').style.border = "2px solid #556052"
+						document.querySelector('#maths button h1').style.color = c2
+						document.querySelector('#maths button h1').style.borderBottom = "2px solid #cbbcb1"
+						document.querySelector('#maths .formulasSection').style.backgroundColor = c1
+						document.getElementById('bookmarks').style.backgroundColor = c3
+						document.getElementById('todolist').style.backgroundColor = c3
+						for (let i = 0; i < document.getElementsByClassName('grouplinks').length; i++) {
+							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = c1;
+						}
+						
+						for (let i = 0; i < document.querySelectorAll('.todoinput button').length; i++) {
+							document.querySelectorAll('.todoinput button')[i].style.color = 'black';
+							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoinput div').length; i++) {
+							document.querySelectorAll('.todoinput div')[i].style.color = c2;
+							// document.querySelectorAll('.todoinput div')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoitem button').length; i++) {
+							document.querySelectorAll('.todoitem button')[i].style.color = 'black';
+							document.querySelectorAll('.todoitem button')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('input').length; i++) {
+							document.querySelectorAll('input')[i].style.backgroundColor = c3
+							document.querySelectorAll('input')[i].style.color = '#eeebdd'
+						}
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'none'
+						document.getElementsByTagName('html')[0].style.backgroundColor = '#1b1717'
+						
 					}
 					searchBar.query = ''
 					break;
@@ -431,6 +531,7 @@ const mathformula = Vue.createApp({
 							B & A & B\\\\
 						\\end{array}
 						\\rangle $$
+						$$ \\{0^n1 | n \\in \\mathbb{N}\\} $$
 					`
 				},
 				{ id: 0, description: 'Eindige automaten', formulas: `

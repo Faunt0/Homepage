@@ -42,7 +42,7 @@ window.addEventListener("keydown", function(event) {
 const searchBar = Vue.createApp({
 	data() {
 		return {
-			query: '/theme 1'
+			query: ''
 		}
 	},
 	methods: {
@@ -189,7 +189,50 @@ const searchBar = Vue.createApp({
 							document.querySelectorAll('input')[i].style.color = '#eeebdd'
 						}
 						document.getElementsByTagName('html')[0].style.backgroundImage = 'none'
-						document.getElementsByTagName('html')[0].style.backgroundColor = '#1b1717'
+						// document.getElementsByTagName('html')[0].style.backgroundColor = '#1b1717'
+						document.getElementsByTagName('html')[0].style.backgroundColor = 'none'
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'linear-gradient(10deg, white, orchid);'
+						
+					} else if (i == 4) {
+						var c1 = '#f0e3ca'; // sectionelements
+						var c2 = '#f0e3ca'; // accent color
+						var c3 = '#a35709'; // element color
+						var c4 = '#f2efea'; // very bright
+						document.getElementById('clock').style.backgroundColor = c3
+						document.getElementById('clock').style.color = c2
+						document.querySelector('#maths').style.backgroundColor = c3
+						document.querySelector('#maths').style.backgroundColor = c3
+						document.querySelector('#maths button').style.backgroundColor = c3
+						document.querySelector('#maths button').style.border = "2px solid #556052"
+						document.querySelector('#maths button h1').style.color = c2
+						document.querySelector('#maths button').style.borderBottom = "2px solid #cbbcb1"
+						document.querySelector('#maths .formulasSection').style.backgroundColor = c1
+						document.getElementById('bookmarks').style.backgroundColor = c3
+						document.getElementById('todolist').style.backgroundColor = c3
+						for (let i = 0; i < document.getElementsByClassName('grouplinks').length; i++) {
+							document.getElementsByClassName('grouplinks')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoinput button').length; i++) {
+							document.querySelectorAll('.todoinput button')[i].style.color = 'black';
+							document.querySelectorAll('.todoinput button')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoinput div').length; i++) {
+							document.querySelectorAll('.todoinput div')[i].style.color = c2;
+							// document.querySelectorAll('.todoinput div')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('.todoitem button').length; i++) {
+							document.querySelectorAll('.todoitem button')[i].style.color = 'black';
+							document.querySelectorAll('.todoitem button')[i].style.backgroundColor = c1;
+						}
+						for (let i = 0; i < document.querySelectorAll('input').length; i++) {
+							document.querySelectorAll('input')[i].style.backgroundColor = c3
+							document.querySelectorAll('input')[i].style.color = '#eeebdd'
+						}
+						// #393232
+						document.getElementsByTagName('html')[0].style.backgroundImage = 'none'
+						// document.getElementsByTagName('html')[0].style.backgroundImage = 'linear-gradient(45deg, orchid, #393232, #f0e3ca);'
+						// document.getElementsByTagName('html')[0].style.backgroundColor = '#1b1717'
+						document.getElementsByTagName('html')[0].style.backgroundColor = '#f0e3ca'
 						
 					}
 					searchBar.query = ''
@@ -336,6 +379,7 @@ const bookmarkList = Vue.createApp({
 				'https://latex.wikia.org/wiki/List_of_LaTeX_symbols',
 				'https://regex101.com/',
 				'https://www.overleaf.com/learn/latex/Mathematical_expressions',
+				'https://thekey.company/',
 			]
 		}
 	},
@@ -435,7 +479,7 @@ const mathformula = Vue.createApp({
 
 	data() {
 		return {
-			activeGroup: 10,
+			activeGroup: 9,
 			activeFormulas: ``,
 			activeDescription: '',
 			formulaItems: [
@@ -522,15 +566,15 @@ const mathformula = Vue.createApp({
 					`
 				},
 				{ id: 0, description: 'Set Theory', formulas: `
-						$$ \\langle \\sum, S, s, A, T \\rangle $$
-						$$ \\langle \\{0, 1\\}, \\{A, B\\}, A, \\{B\\}, 
+						$$ \\left\\langle \\sum, S, s, A, T \\right \\rangle $$
+						$$ \\left\\langle \\{0, 1\\}, \\{A, B\\}, A, \\{B\\}, 
 						\\begin{array}{c|c|c|} 
 							T & 0 & 1 \\\\
 						\\hline
 							A & A & B\\\\
 							B & A & B\\\\
 						\\end{array}
-						\\rangle $$
+						\\right\\rangle $$
 						$$ \\{0^n1 | n \\in \\mathbb{N}\\} $$
 					`
 				},
@@ -538,6 +582,12 @@ const mathformula = Vue.createApp({
 						de eindige automaat van de vorige groep.
 					`
 				},
+				{ id: 0, description: 'Matrixes', formulas: `
+						$$ \\begin{pmatrix}x\\\\y\\end{pmatrix} = \\begin{pmatrix} 12\\\\14 \\end{pmatrix} + \\lambda \\begin{pmatrix} 2\\\\3\\end{pmatrix}$$
+						$$ \\|\\vec{a}\\| $$
+					`
+				},
+
 			]
 		}
 	},

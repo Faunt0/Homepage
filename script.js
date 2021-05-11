@@ -75,6 +75,13 @@ const searchBar = Vue.createApp({
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-1].setAttribute('target', '_incognito')
 					setTimeout(function(){ bookmarkList.bookmarks.splice(bookmarkList.bookmarks.length-2, 2) }, 3000);
 					break;
+				case '/style2':
+					console.log('this should change to the other styleshit')
+					break;
+				case '/style1':
+					console.log('this should change to the first styleshit')
+					break;
+			
 				case (str.match(/\/theme (\d)/) || {}).input:
 					i = str.match(/\/theme (\d)/)[1];
 					if (i == 0) {
@@ -268,7 +275,7 @@ const todoList = Vue.createApp({
 			this.todos = JSON.parse(localStorage.getItem('todos'))
 		}
 		if (this.todos.length != 0) {
-			this.borderBottom = 'border-bottom: 1px solid black;';
+			this.borderBottom = 'border-bottom: 2px solid red;';
 		}
 	},
 	methods: {
@@ -584,7 +591,8 @@ const mathformula = Vue.createApp({
 				},
 				{ id: 0, description: 'Matrixes', formulas: `
 						$$ \\begin{pmatrix}x\\\\y\\end{pmatrix} = \\begin{pmatrix} 12\\\\14 \\end{pmatrix} + \\lambda \\begin{pmatrix} 2\\\\3\\end{pmatrix}$$
-						$$ \\|\\vec{a}\\| $$
+						$$ \\vec{a}=(a_1, a_2, a_3,...,a_{n}) $$
+						$$ \\|\\vec{a}\\| = \\sqrt{\\sum_{i=0}^{n}n_{i}^2}$$
 					`
 				},
 

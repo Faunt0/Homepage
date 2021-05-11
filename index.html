@@ -6,7 +6,8 @@
 	<meta property="og:description" content="A homepage that stores my personal bookmarks, eliminating the need to remember every website I regularly visit.">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="style.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+	<link href="style2.css" rel="stylesheet" type="text/css" />
 	<!-- Vue v3 -->
 	<script src="https://unpkg.com/vue@next"></script>
 	<!-- JS LaTeX equations -->
@@ -29,7 +30,7 @@
 
 	<div id="todolist">
 		<div class="todoinput" v-bind:style="borderBottom">
-			<div v-if="newtodo != ''" style="color: gold;">{{ newtodo }}</div>
+			<div v-if="newtodo != ''" style="color: whitesmoke;">{{ newtodo }}</div>
 			<div v-else style="color: gold;"><i>add new todo</i></div>
 			<input id="newtodo" name="addtodo" v-model="newtodo" v-on:keyup.enter="addTodo" type="text">
 			<button v-on:click="addTodo">Add todo</button>

@@ -39,6 +39,11 @@ input {
 	border: 1px solid red;
 	color: whitesmoke;
 }
+
+.grouplinks:hover {
+	background-color: white;
+	box-shadow: 2px 2px 2px #222322;
+}
 button:active {
 	/* background-color: rgb(65, 76, 80); */
 	/* border: 2px solid lightgrey; */
@@ -178,6 +183,7 @@ img {
 	background-color: #f05454;
 	border-bottom: 2px solid red;
     box-shadow: 4px 4px #222831;
+	transition: .5s background-color ease-out;
 }
 .grouplinks:nth-child(even) {
 	border-top-left-radius: 0;
@@ -336,7 +342,6 @@ img {
 	display: grid;
 	grid-template-columns: 70% auto 20%;
 }
-
 .todoitem button {
 	color: gold;
 	background-color: rgb(243, 248, 250);
@@ -358,9 +363,19 @@ img {
 	background-color: #f05454;
 	border-bottom: 2px solid red;
     box-shadow: 4px 4px #222831;
+
+	transition: .5s background-color ease-out;
+	transition: .5s box-shadow ease-out;
+	transition: all .2s ease-out;
 }
 .todoitem button:hover {
+	box-shadow: 10px 10px 5px #222322;
     background-color: blueviolet;
+
+	/* transform: rotateX(20deg); */
+	transform: rotate3d(1, 1, 1, 5deg);
+	/* transform: rotateZ(20deg); */
+	/* transition: .5s background-color ease-in-out; */
 }
 .todoitem div {
 	text-align: left;

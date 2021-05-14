@@ -75,6 +75,10 @@ const searchBar = Vue.createApp({
 					// document.querySelectorAll('.grouplinks a')[bookmarkList.bookmarks.length-1].setAttribute('target', '_incognito')
 					setTimeout(function(){ bookmarkList.bookmarks.splice(bookmarkList.bookmarks.length-2, 2) }, 3000);
 					break;
+				case '/science':
+					this.query = ''
+					window.open('file:///home/lex/Desktop/Programming/Webhome/homepage3/science.html')
+					break;
 				case '/style2':
 					console.log('this should change to the other styleshit')
 					break;
@@ -331,10 +335,10 @@ const todoList = Vue.createApp({
 			localStorage.setItem('todos', JSON.stringify(this.todos))
 		}
 	}
-})
-todoList.component('todo-item', {
+}).component('todo-item', {
 	props: ['item'],
 	template: `
+	<transition name="fade">
 	<div class="todoitem">
 		<button draggable="true"
 			v-bind:id="item.id"
@@ -351,9 +355,9 @@ todoList.component('todo-item', {
 
 		<button class="deleteButton" v-on:click="$emit('remove-todo')">X</button>
 	</div>
+	</transition>
 	`,
-})
-todoList.mount('#todolist')
+}).mount('#todolist')
 
 
 const bookmarkList = Vue.createApp({

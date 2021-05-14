@@ -34,6 +34,7 @@
 			<div v-if="newtodo != ''" style="color: whitesmoke;">{{ newtodo }}</div>
 			<div v-else style="color: gold;"><i>add new todo</i></div>
 			<input id="newtodo" name="addtodo" v-model="newtodo" v-on:keyup.enter="addTodo" type="text">
+			
 			<button v-on:click="addTodo">Add todo</button>
 			<button v-on:click="removeAll">RemoveAll</button>
 			<button v-on:click="removeStriked">Striked</button>

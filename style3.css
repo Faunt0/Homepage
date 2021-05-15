@@ -69,18 +69,23 @@ img {
 
 	justify-self: center;
 	align-self: center;
-    border-radius: none;
+    border-radius: 10px;
+	background-image: linear-gradient(-90deg, #222322, #30475e, #30475e, #30475e, #222322);
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	/* padding: 10px; */
 }
 #searchfield input {
     width: 320px;
-    width: 90%;
+    width: 100%;
     padding: 0;
     font-size: xxx-large;
     font-size: 3em;
     background-color: transparent;
+	/* color: white; */
     padding-left: 25px;
     border: none;
-    border-bottom: 3px solid red;
+    /* border-bottom: 3px solid red; */
 }
 #searchfield input:focus {
     /* border: 1px solid whitesmoke; */

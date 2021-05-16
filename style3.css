@@ -12,6 +12,7 @@ html {
 	background-image: linear-gradient(-45deg, #2d132c, #e48257);
     background-image: none;
     background-color: #30475e;
+    /* background-color: purple; */
     /* background-color: rebeccapurple; */
 	/* background-image: linear-gradient(180deg, lightskyblue, royalblue); */
 	height: 100%
@@ -70,7 +71,8 @@ img {
 	justify-self: center;
 	align-self: center;
     border-radius: 10px;
-	background-image: linear-gradient(-90deg, #222322, #30475e, #30475e, #30475e, #222322);
+	/* background-image: linear-gradient(-90deg, #222322, #30475e, #30475e, #30475e, #222322); */
+	background-image: linear-gradient(-90deg, #222322, transparent, transparent, transparent);
 	border-left: 2px solid black;
 	border-right: 2px solid black;
 	/* padding: 10px; */

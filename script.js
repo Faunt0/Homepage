@@ -596,7 +596,7 @@ const mathformula = Vue.createApp({
 				{ id: 0, description: 'Matrixes', formulas: `
 						$$ \\begin{pmatrix}x\\\\y\\end{pmatrix} = \\begin{pmatrix} 12\\\\14 \\end{pmatrix} + \\lambda \\begin{pmatrix} 2\\\\3\\end{pmatrix}$$
 						$$ \\vec{a}=(a_1, a_2, a_3,...,a_{n}) $$
-						$$ \\|\\vec{a}\\| = \\sqrt{\\sum_{i=0}^{n}n_{i}^2}$$
+						$$ |\\vec{a}| = \\sqrt{\\sum_{i=0}^{n}\\vec{a}_{i}^2}$$
 					`
 				},
 

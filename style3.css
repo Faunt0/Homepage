@@ -37,7 +37,6 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	/* background-color: rgb(61, 61, 61); */
 }
 html {
 	margin: auto;
@@ -45,12 +44,8 @@ html {
     background-color: var(--bg-color);
 	/* background-color: rgb(54, 41, 41); */
 	/* background-color: #2d132c;
-	background-image: linear-gradient(-45deg, #2d132c, #e48257);
-    background-image: none; */
-    /* background-color: purple; */
-    /* background-color: rebeccapurple; */
+	background-image: linear-gradient(-45deg, #2d132c, #e48257);*/
 	/* background-image: linear-gradient(180deg, lightskyblue, royalblue); */
-	/* height: 100%; */
 }
 body {
 	display: grid;
@@ -58,17 +53,11 @@ body {
 	grid-template-rows: 1fr 1fr 1fr;
 }
 input {
-	/* background-color: #2d132c; */
 	padding: 0.7em;
 	border-radius: 5px;
 
-	/* background-color: rgb(61, 61, 61);
-	border: 1px solid var(--caret-color);
-	color: lightgrey; */
-
-
 	background-color: transparent;
-    border: none;
+	border: none;
 	border: 1px solid var(--accent-color);
 	color: var(--text-color);
 }
@@ -79,7 +68,6 @@ input {
 }
 button:active {
 	/* background-color: rgb(65, 76, 80); */
-	/* border: 2px solid lightgrey; */
 	color: var(--caret-color);
 
 	/* border-top: 2px solid darkslategray;
@@ -102,24 +90,21 @@ img {
 
 	justify-self: center;
 	align-self: center;
+	border-bottom: 2px solid var(--caret-color);
     /* border-radius: 10px; */
 	/* background-image: linear-gradient(-90deg, #222322, var(--bg-color), var(--bg-color), var(--bg-color), #222322); */
 	/* background-image: linear-gradient(90deg, var(--shadow-color), transparent, transparent, transparent, var(--shadow-color)); */
-	/* border-left: 2px solid var(--caret-color);
-	border-right: 2px solid var(--caret-color); */
-	border-bottom: 2px solid var(--caret-color);
-	/* padding: 10px; */
 }
 #searchfield input {
-    width: 320px;
-    width: 100%;
-    padding: 0;
-    font-size: xxx-large;
-    font-size: 3em;
-    background-color: transparent;
+	width: 320px;
+	width: 100%;
+	padding: 0;
+	font-size: xxx-large;
+	font-size: 3em;
+	background-color: transparent;
 	/* color: var(--text-color); */
-    padding-left: 25px;
-    border: none;
+	padding-left: 25px;
+	border: none;
     /* border-bottom: 3px solid var(--accent-color); */
 }
 #searchfield input:focus {
@@ -127,17 +112,16 @@ img {
 }
 #clock {
 	grid-column: 1 / 1;
-	grid-row: 1/1;
+	grid-row: 1 / 1;
 	justify-self: center;
 	align-self: center;
 
 	text-align: center;
 	margin: 2em auto;
 	padding: 2em;
+
 	box-shadow: 3px 4px 10px var(--caret-color);
-	color: gold;
 	border-radius: 10px;
-	background-color: #af0404;
 
 	box-shadow: none;
 	color: var(--text-color);
@@ -148,17 +132,10 @@ img {
 	/* background-image: url(https://i.imgur.com/poCtNRk.gif); */
 	/* filter: hue-rotate(200deg); */
 	/* transform:rotate(30deg); */
-	/* animation: rotate 1s; */
-	/* animation-iteration-count: infinite; */
-	/* animation-timing-function: linear; */
 	background-repeat: repeat;
 	background-size: 3em;
 
 }
-/* @keyframes rotate {
-	from {transform:rotate(0deg);}
-	to {transform:rotate(360deg);}
-} */
 #bookmarks {
 	grid-column: 3 / 4;
 	grid-row: 1/-1;
@@ -167,13 +144,13 @@ img {
 
 	width: 20em;
 	padding: 1.2em;
+	margin: 2em auto;
+	
 	border-radius: 10px;
 	box-shadow: 3px 4px 10px var(--caret-color);
 	background-color: #f2edd7c5;
 	border: 2px solid var(--caret-color);
-	margin: 2em auto;
 
-	border-radius: 0;
 	box-shadow: none;
 	background-color: transparent;
 	border: none;
@@ -184,18 +161,15 @@ img {
 	/* border: 2px solid var(--caret-color); */
 	border-bottom: 2px solid var(--caret-color);
 	border-top: 2px solid var(--caret-color);
-	margin: 2em auto;
-    
-	/* border-bottom: 2px solid var(--accent-color); */
 }
 #random {
+	display: grid;
+	grid-template-columns: auto;
 	width: 50%;
+	
 	border-bottom: 2px solid var(--caret-color);
 	border-left: none;
 	border-radius: 5px;
-	display: grid;
-	grid-template-columns: auto;
-
 	border-bottom: 2px solid var(--accent-color);
 }
 #random a {
@@ -253,9 +227,9 @@ img {
 	justify-self: stretch;
 	align-self: stretch;
 
-	color: var(--caret-color);
-    color: var(--text-color);
+	color: var(--text-color);
 }
+/*
 .edits {
 	opacity: 0;
 	margin: 0;
@@ -266,8 +240,8 @@ img {
 .edits button {
 	border: 2px solid var(--caret-color);
 	border-radius: 5px;
-}
-/* adding new stuff */
+}*/
+/* adding new stuff; but not right now :D */
 .linkinput {
 	grid-column: 1 / -1;
 	grid-row: -1/-1;
@@ -314,6 +288,7 @@ img {
 
 	width: 22em;
 	padding: 1em;
+
 	border-bottom: 1px solid var(--caret-color);
 	border-top: 1px solid var(--caret-color);
 	border-radius: 10px;
@@ -501,6 +476,7 @@ img {
 	html {
 		background-image: none;
 		background-color: lightskyblue;
+		background-color: rebeccapurple;
 	}
 	body {
 	  	grid-template-columns: 50% 50%;
@@ -511,7 +487,6 @@ img {
 		column-gap: normal;
 		row-gap: 1em;
 		overflow: hidden;
-		  /* justify-content: space-around; */
 	}
 	#lightdark {
 		grid-column: 2 / 3;
